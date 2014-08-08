@@ -15,7 +15,7 @@ import qualified Data.Vector as V
 -- Left reduce
 type Reducer a r = r -> a -> r
 
--- Here's where then rank-2 type is needed
+-- Here's where the rank-2 type is needed
 type Transducer a b = forall r . Reducer a r -> Reducer b r
 
 -- Left fold
