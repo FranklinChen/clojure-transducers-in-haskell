@@ -11,3 +11,7 @@ So I refactored his code to fit just exactly what he did, not something far more
 Note that the critical component of this work involves using [rank-2 types](http://www.haskell.org/haskellwiki/Rank-N_types). Transducers *cannot* be expressed in a weaker type system that does not support higher-rank types.
 
 I hope that the introduction of transducers will create a lot of interest among those who are not already familiar with higher-rank types.
+
+## My blog post
+
+I wrote a [blog post about this code](http://ConscientiousProgrammer.com/blog/2014/08/07/understanding-cloure-transducers-through-types/).
