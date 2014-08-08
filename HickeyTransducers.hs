@@ -3,7 +3,9 @@
 
 -- Transducers in Haskell
 
-mapping :: (b -> a) -> (r -> a -> r) -> (r -> b -> r)
+mapping :: (a -> b) -> (r -> b -> r) -> (r -> a -> r)
+-- Original was (b -> a) -> (r -> a -> r) -> (r -> b -> r)
+-- but Michael O'Keefe in comment pointed out this is misleading
 mapping f xf r a = xf r (f a)
 
 filtering :: (a -> Bool) -> (r -> a -> r) -> (r -> a -> r)

@@ -26,7 +26,7 @@ class Conjable f where
   empty :: f a
   conj :: Reducer a (f a)
 
-mapping :: (b -> a) -> Transducer a b
+mapping :: (a -> b) -> Transducer b a
 mapping f xf r a = xf r (f a)
 
 filtering :: (a -> Bool) -> Transducer a a
@@ -37,7 +37,7 @@ flatmapping f xf r a = fold xf r (f a)
 
 -- I changed Rich Hickey's code to be more general than just list
 -- but accept anything Conjable
-xlist :: (Foldable f, Conjable f) => Transducer a b -> f b -> f a
+xlist :: (Foldable f, Conjable f) => Transducer b a -> f a -> f b
 xlist xf = fold (xf conj) empty
 
 -- build any old Foldable function with its transducer, all the same way
