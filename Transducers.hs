@@ -19,8 +19,8 @@ type Reducer a r = r -> a -> r
 type Transducer a b = forall r . Reducer a r -> Reducer b r
 
 -- Left fold
-class Foldable t where
-  fold :: Reducer a r -> r -> t a -> r
+class Foldable f where
+  fold :: Transducer a (f a)
 
 class Conjable f where
   empty :: f a
