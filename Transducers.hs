@@ -7,7 +7,7 @@
   http://www.reddit.com/r/haskell/comments/2cv6l4/clojures_transducers_are_perverse_lenses/
 -}
 
-{-# LANGUAGE Rank2Types #-}
+{-# LANGUAGE RankNTypes #-}
 
 -- For example using Vector instead of list
 import qualified Data.Vector as V
